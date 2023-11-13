@@ -15,10 +15,8 @@ const NewItem = ({ onAddItem }) => { // 1. Add the onAddItem prop
       category,
     };
 
-    // 2. Use the onAddItem prop to send the new item details
     onAddItem(item);
 
-    // Clear the form fields
     setName("");
     setQuantity(1);
     setCategory("produce");
@@ -30,7 +28,6 @@ const NewItem = ({ onAddItem }) => { // 1. Add the onAddItem prop
       <input type="number" min="1" max="99" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} required />
       <select value={category} onChange={(e) => setCategory(e.target.value)}>
         <option value="produce">Produce</option>
-        {/* might add other options here */}
       </select>
       <button type="submit">Add Item</button>
     </form>
